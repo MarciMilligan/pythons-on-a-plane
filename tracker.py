@@ -66,9 +66,9 @@ def changeM2Lon(lat, M):
 
 def openskyAPICurrStatus(lat, lon):
     # Test lat and lon of Boulder, CO
-    # lat = 40.016869
+    lat = 40.016869
     # lat = 33.9416
-    # lon = -105.279617
+    lon = -105.279617
     # lon = -118.4085
     M = 25
     minLat = lat-changeM2Lat(M)
@@ -95,9 +95,9 @@ def openskyAPICurrStatus(lat, lon):
 
 def screenOut(baseLat, baseLon, lat, lon):
     #64x48
-    # baseLat = 40.016869
+    baseLat = 40.016869
     # baseLat = 33.9416
-    # baseLon = -105.279617
+    baseLon = -105.279617
     # baseLon = -118.4085
     M = 25
     minLat = baseLat-changeM2Lat(M)
@@ -125,9 +125,9 @@ def screenOut(baseLat, baseLon, lat, lon):
     return out
 
 def plotPlanes(lat, lon, dictionary):
-    # lat = 40.016869
+    lat = 40.016869
     # lat = 33.9416
-    # # lon = -105.279617
+    lon = -105.279617
     # lon = -118.4085
     M = 25
     

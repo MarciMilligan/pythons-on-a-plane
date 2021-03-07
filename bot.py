@@ -4,7 +4,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 # load_dotenv()
-TOKEN="ODE3OTcyNjI3NzExNzIxNDcy.YERSXw.CMAifJatwhfnYU6e-EPuzRzzzBo"
+TOKEN=
 # TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = discord.Client()
