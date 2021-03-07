@@ -64,12 +64,12 @@ def changeM2Lon(lat, M):
     r = R*math.cos(lat*deg2rad)
     return (M/r)*rad2deg
 
-def openskyAPICurrStatus():
+def openskyAPICurrStatus(lat, lon):
     # Test lat and lon of Boulder, CO
     # lat = 40.016869
-    lat = 33.9416
+    # lat = 33.9416
     # lon = -105.279617
-    lon = -118.4085
+    # lon = -118.4085
     M = 25
     minLat = lat-changeM2Lat(M)
     minLon = lon-changeM2Lon((lat + changeM2Lat(M)) if lat > 0 else (lat-changeM2Lat(M)), M)
@@ -93,12 +93,12 @@ def openskyAPICurrStatus():
     
     return plane_library
 
-def screenOut(lat, lon):
+def screenOut(baseLat, baseLon, lat, lon):
     #64x48
     # baseLat = 40.016869
-    baseLat = 33.9416
+    # baseLat = 33.9416
     # baseLon = -105.279617
-    baseLon = -118.4085
+    # baseLon = -118.4085
     M = 25
     minLat = baseLat-changeM2Lat(M)
     maxLat = baseLat+changeM2Lat(M)
@@ -122,13 +122,13 @@ def screenOut(lat, lon):
     f = open("rpdata.txt", "w")
     f.write(str(out))
     f.close()
-    return
+    return out
 
 def plotPlanes(lat, lon, dictionary):
     # lat = 40.016869
-    lat = 33.9416
-    # lon = -105.279617
-    lon = -118.4085
+    # lat = 33.9416
+    # # lon = -105.279617
+    # lon = -118.4085
     M = 25
     
     minLat = lat-changeM2Lat(M)
@@ -148,7 +148,7 @@ def plotPlanes(lat, lon, dictionary):
             altitude.append(float(x[7]))
             trueTrack.append(float(x[10] if x[10] else 0))
 
-    screenOut(latCoords, lonCoords)
+    out = screenOut(lat, lon, latCoords, lonCoords)
 
     BBox = [minLon, maxLon, minLat, maxLat]
     
@@ -173,11 +173,14 @@ def plotPlanes(lat, lon, dictionary):
 
     plt.savefig('planesPlot.png')
     plt.show()
-    return
+    return out
 
 '''
 Main Function
 '''
 
-dictionary = openskyAPICurrStatus()
-plotPlanes(0, 0, dictionary)
+
+if __name__ == '__main__':
+    dictionary = openskyAPICurrStatus(0,0)
+    plotPlanes(0, 0, dictionary)
+

@@ -3,8 +3,9 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+# load_dotenv()
+TOKEN="ODE3OTcyNjI3NzExNzIxNDcy.YERSXw.CMAifJatwhfnYU6e-EPuzRzzzBo"
+# TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = discord.Client()
 
@@ -23,17 +24,17 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('!hello'):
-        msg = '{0.author.mention} has a massive pp. We are lucky to have you'.format(message)
-        await message.channel.send(msg)
+    # if message.content.startswith('!hello'):
+    #     msg = '{0.author.mention} has a massive pp. We are lucky to have you'.format(message)
+    #     await message.channel.send(msg)
 
-    if message.content.startswith('!print'):
-        channel = client.get_channel(817962513433493517)
-        await channel.send(file=discord.File('snek.png'))
+    # if message.content.startswith('!print'):
+    #     channel = client.get_channel(817962513433493517)
+    #     await channel.send(file=discord.File('snek.png'))
 
     if message.content.startswith('!export'):
        channel = client.get_channel(817962513433493517)
-       os.system('python3 tracker.py')
+       os.system('python3 driver.py')
        await channel.send(file=discord.File('planesPlot.png'))
 
     if message.content.startswith('!help'):
