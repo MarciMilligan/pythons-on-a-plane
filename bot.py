@@ -33,6 +33,7 @@ async def on_message(message):
 
     if message.content.startswith('!export'):
        channel = client.get_channel(817962513433493517)
+       os.system('python3 tracker.py')
        await channel.send(file=discord.File('planesPlot.png'))
 
     if message.content.startswith('!help'):
