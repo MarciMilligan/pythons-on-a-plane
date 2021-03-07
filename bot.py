@@ -31,9 +31,9 @@ async def on_message(message):
         channel = client.get_channel(817962513433493517)
         await channel.send(file=discord.File('snek.png'))
 
-    #if message.content.startswith('!export'):
-    #    channel = client.get_channel(817962513433493517)
-    #    await channel.send(file=discord.File('finalGraph.png'))
+    if message.content.startswith('!export'):
+       channel = client.get_channel(817962513433493517)
+       await channel.send(file=discord.File('planesPlot.png'))
 
     if message.content.startswith('!help'):
         msg1 = 'Use !export to print airplanes over you!'.format(message)

@@ -171,8 +171,7 @@ def plotPlanes(lat, lon, dictionary):
     ax.set_xlim(BBox[0], BBox[1])
     ax.set_ylim(BBox[2], BBox[3])  
 
-    fig = plt.figure()
-    plt.savefig("planesPlot.png", dpi=10)
+    plt.savefig('planesPlot.png')
     plt.show()
     return
 
