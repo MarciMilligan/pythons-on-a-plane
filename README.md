@@ -1,6 +1,6 @@
 # Pythons on a Plane
 ## HackCU 2020 Entry
-### Peyton Early, Tyler Kirkpatrick, Mason Milligan, and Nathan Shaver
+### Peyton Early, Tyler Kirkpatrick, Marceline Milligan, and Nathan Shaver
 
 <img src="./images/hardware.png"/>
 
